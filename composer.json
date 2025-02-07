@@ -1,0 +1,50 @@
+{
+    "name": "digitaltunnel/otakit",
+    "description": "OtaKit is a Laravel package designed to facilitate the generation and validation of One-Time Passwords (OTPs) within Laravel applications.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "role": "Developer",
+            "name": "Hossam H Monir ( Digital Tunnel )",
+            "email": "hey@digitaltunnel.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DigitalTunnel\\Otakit\\": "src/",
+            "DigitalTunnel\\Otakit\\Tests\\": "tests"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DigitalTunnel\\Otakit\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.9",
+        "pestphp/pest": "^v3.7.2",
+        "pestphp/pest-plugin-laravel": "^v3.1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DigitalTunnel\\Otakit\\Providers\\OtakitServiceProvider"
+            ]
+        }
+    }
+}
