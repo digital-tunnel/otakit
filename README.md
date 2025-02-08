@@ -2,7 +2,6 @@
 
 # Otakit
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/digitaltunnel/otakit.svg?style=flat-square)](https://packagist.org/packages/digitaltunnel/otakit)
-![Tests](https://github.com/digitaltunnel/otakit/workflows/tests/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/digitaltunnel/otakit.svg?style=flat-square)](https://packagist.org/packages/digitaltunnel/otakit)
 
 OtaKit is a Laravel package designed to facilitate the generation and validation of One-Time Passwords (OTPs) within Laravel applications.
@@ -23,7 +22,7 @@ composer require digitaltunnel/otakit
 After installing the package, publish its service provider and configuration file using the following Artisan command:
 
 ```bash
-php artisan vendor:publish --provider="DigitalTunnel\OtaKit\Providers\OtaKitServiceProvider"
+php artisan vendor:publish --provider="DigitalTunnel\Otakit\Providers\OtakitServiceProvider"
 ```
 This will publish the configuration file (config/otakit.php) to your application's config directory. You can customize the OTP length and expiration time in this file.
 
