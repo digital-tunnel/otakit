@@ -6,6 +6,7 @@ namespace DigitalTunnel\Otakit\Traits;
 
 use DigitalTunnel\Otakit\Actions\GenerateOtp;
 use DigitalTunnel\Otakit\Actions\ValidateOtp;
+use Illuminate\Support\Facades\Cache;
 
 trait Otakit
 {
@@ -29,6 +30,16 @@ trait Otakit
         return (new ValidateOtp)->handle(
             otpable: $this,
             otp: $otp
+        );
+    }
+
+    /**
+     * Check if the Otpable model has an OTP code
+     */
+    public function hasOtp(): bool
+    {
+        return Cache::has(
+            key: 'otp.'.$this->getQualifiedKeyName().'.'.$this->id,
         );
     }
 }
