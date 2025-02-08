@@ -24,7 +24,7 @@ trait Otakit
     /**
      * Validate the OTP code for the given Otpable model
      */
-    public function ValidateOtp(int $otp): bool
+    public function validateOtp(int $otp): bool
     {
         return (new ValidateOtp)->handle(
             otpable: $this,
