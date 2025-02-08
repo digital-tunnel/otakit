@@ -150,3 +150,27 @@ it('can not validate OTP with expired code', function () {
 
     }, [OtpValidationFailed::class]);
 });
+
+it('has valid otp in cache', function () {
+    $otpable = new class extends Model
+    {
+        use \DigitalTunnel\Otakit\Traits\Otakit;
+
+        public function getQualifiedKeyName(): string
+        {
+            return 'users.id';
+        }
+    };
+
+    $otpable->id = 1;
+
+    $cacheKey = "otp.{$otpable->getQualifiedKeyName()}.{$otpable->id}";
+
+    Cache::put(
+        key: $cacheKey,
+        value: 123456,
+        ttl: now()->addMinutes(5)
+    );
+
+    expect($otpable->hasOtp())->toBeTrue();
+});
